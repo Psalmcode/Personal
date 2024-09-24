@@ -1,0 +1,97 @@
+<SoundCoreFeatDefSettings>
+
+<eContextID  Id='Standard'>
+
+    <eEndpointTopoId Id ='digitalouttopo'>
+      <eParamID Id = 'Mute'           Type = 'Bool'   Value = '0'     />
+      <eParamID Id = 'Volume Level'   Type = 'Float'  Value = '0.0'   />
+      <eParamID Id = 'Balance Level'>
+        <eChannelType ChType = 'MultiChannel'                      />
+        <eChannelID Id = 'FLeft'     Type = 'Float'  Value = '0.0'  />
+        <eChannelID Id = 'FRight'    Type = 'Float'  Value = '0.0'  />
+        <eChannelID Id = 'Center'    Type = 'Float'  Value = '0.0'   />
+        <eChannelID Id = 'Subwoofer' Type = 'Float'  Value = '0.0'   />
+        <eChannelID Id = 'RLeft'     Type = 'Float'  Value = '0.0'   />
+        <eChannelID Id = 'RRight'   Type = 'Float'  Value = '0.0'    />
+      </eParamID>
+    </eEndpointTopoId>
+
+    <eEndpointTopoId Id ='lineouttopo'>
+      <eParamID Id = 'Mute'           Type = 'Bool'	Value = '0'     />
+      <eParamID Id = 'Volume Level'   Type = 'Float'	Value = '-6.0'   />
+      <eParamID Id = 'Balance Level'>
+        <eChannelType ChType= 'MultiChannel'                         />
+        <eChannelID Id = 'FLeft'     Type = 'Float'	Value = '-6.0'   />
+        <eChannelID Id = 'FRight'    Type = 'Float'	Value = '-6.0'   />
+        <eChannelID Id = 'Center'    Type = 'Float'	Value = '-6.0'   />
+        <eChannelID Id = 'Subwoofer' Type = 'Float'	Value = '-6.0'    />
+        <eChannelID Id = 'RLeft'     Type = 'Float'	Value = '-6.0'     />
+        <eChannelID Id = 'RRight'    Type = 'Float'	Value = '-6.0'     />
+      </eParamID>
+    </eEndpointTopoId>
+
+    <eEndpointTopoId Id ='digitalintopo'>
+      <eParamID Id = 'Mute'           Type = 'Bool'   Value = '0'     />
+      <eParamID Id = 'Volume Level'   Type = 'Float'  Value = '0.0' />
+      <eParamID Id = 'Balance Level'>
+        <eChannelType ChType= 'Stereo'                              />
+        <eChannelID Id = 'FLeft'     Type = 'Float'  Value = '0.0'  />
+        <eChannelID Id = 'FRight'    Type = 'Float'  Value = '0.0'  />
+      </eParamID>
+    </eEndpointTopoId>
+
+    <eEndpointTopoId Id ='wuhintopo'>
+      <eParamID Id = 'Mute'           Type = 'Bool'	Value = '0'     />
+      <eParamID Id = 'Volume Level'   Type = 'Float'	Value = '0.0' />
+      <eParamID Id = 'Balance Level'>
+        <eChannelType ChType= 'Stereo'                              />
+        <eChannelID Id = 'FLeft'      Type = 'Float'  Value = '0.0' />
+        <eChannelID Id = 'FRight'     Type = 'Float'  Value = '0.0'  />
+      </eParamID>
+    </eEndpointTopoId>
+		
+    <eEndpointTopoId Id ='linein2topo'>
+      <eParamID Id = 'Mute'           Type = 'Bool'	Value = '0'     />
+      <eParamID Id = 'Volume Level'   Type = 'Float'	Value = '0.0' />
+      <eParamID Id = 'Balance Level'>
+        <eChannelType ChType= 'Stereo'                              />
+        <eChannelID Id = 'FLeft'      Type = 'Float'  Value = '0.0' />
+        <eChannelID Id = 'FRight'     Type = 'Float'  Value = '0.0'  />
+      </eParamID>
+    </eEndpointTopoId>
+
+    <eEndpointTopoId Id ='mic1topo'>
+      <eParamID Id = 'Mute'           Type = 'Bool'	Value = '0'     />
+      <eParamID Id = 'Volume Level'   Type = 'Float'	Value = '0.0' />
+      <eParamID Id = 'Balance Level'>
+        <eChannelType ChType= 'Stereo'                              />
+        <eChannelID Id = 'FLeft'      Type = 'Float'  Value = '0.0' />
+        <eChannelID Id = 'FRight'     Type = 'Float'  Value = '0.0'  />
+      </eParamID>
+      <eParamID Id = 'MicBoost Level'   Type = 'Float'  Value = '20.0'   />
+    </eEndpointTopoId>
+		
+    <eEndpointTopoId Id ='mic2topo'>
+      <eParamID Id = 'Mute'           Type = 'Bool'	Value = '0'     />
+      <eParamID Id = 'Volume Level'   Type = 'Float'	Value = '0.0' />
+      <eParamID Id = 'Balance Level'>
+        <eChannelType ChType= 'Stereo'                              />
+        <eChannelID Id = 'FLeft'      Type = 'Float'  Value = '0.0' />
+        <eChannelID Id = 'FRight'     Type = 'Float'  Value = '0.0'  />
+      </eParamID>
+      <eParamID Id = 'MicBoost Level'   Type = 'Float'  Value = '20.0'   />
+    </eEndpointTopoId>
+
+    <eEndpointTopoId Id ='dmictopo'>
+      <eParamID Id = 'Mute'           Type = 'Bool'	Value = '0'     />
+      <eParamID Id = 'Volume Level'   Type = 'Float'	Value = '23.0' />
+      <eParamID Id = 'Balance Level'>
+        <eChannelType ChType= 'Stereo'                              />
+        <eChannelID Id = 'FLeft'      Type = 'Float'  Value = '23.0' />
+        <eChannelID Id = 'FRight'     Type = 'Float'  Value = '23.0'  />
+      </eParamID>
+      <eParamID Id = 'MicBoost Level'   Type = 'Float'  Value = '0.0'   />
+    </eEndpointTopoId>
+</eContextID>
+
+</SoundCoreFeatDefSettings>
