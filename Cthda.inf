@@ -1,0 +1,1121 @@
+;
+;
+; Copyright (C) Creative Technology Ltd. All rights reserved.
+;
+; Module Name:    
+;       CTHDA.INF
+;
+
+[Version]
+Signature="$Windows NT$"
+Class=MEDIA
+ClassGuid={4d36e96c-e325-11ce-bfc1-08002be10318}
+Provider=%CREAF%
+CatalogFile.NTX86=cthda.cat
+CatalogFile.NTAMD64=cthda64.cat
+DriverVer=09/30/2014, 6.0.100.2052
+
+[SignatureAttributes]
+cthda.sys=SignatureAttributes.DRM
+CTHRFX32.dll=SignatureAttributes.PETrust
+CTHRFX64.dll=SignatureAttributes.PETrust
+
+[SignatureAttributes.DRM]
+DRMLevel=1300
+
+[SignatureAttributes.PETrust]
+PETrust=true
+
+[Manufacturer]
+%MfgName% = Creative, NTAMD64
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[Creative]
+%Creative.Device1Desc% = CTDev1, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280550
+%Creative.Device1Desc% = CTDev1, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280551
+%Creative.Device1Desc% = CTDev1, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280552
+%Creative.Device1Desc% = CTDev1, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280580
+%Creative.Device1Desc% = CTDev1, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_1028057B
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280685
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280686
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280687
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280688
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280689
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_1028068A
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_1028068B
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_1028068C
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_1028069C
+
+[Creative.NTAMD64]
+%Creative.Device1Desc% = CTDev1, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280550
+%Creative.Device1Desc% = CTDev1, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280551
+%Creative.Device1Desc% = CTDev1, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280552
+%Creative.Device1Desc% = CTDev1, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280580
+%Creative.Device1Desc% = CTDev1, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_1028057B
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280685
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280686
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280687
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280688
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_10280689
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_1028068A
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_1028068B
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_1028068C
+%Creative.Device1Desc% = CTDev2, HDAUDIO\FUNC_01&VEN_1102&DEV_0011&SUBSYS_1028069C
+
+[CTDev1.NTX86]
+Include=ks.inf, wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration
+CopyFiles=SysFiles.CopyList.ntx86,DLL.CopyList.ntx86,EXE.CopyList.ntx86,APO.CopyList.ntx86,CoInst.CopyList.ntx86,AddCat.CopyList.ntx86,Default.CopyList,StrFiles.CopyList
+AddReg=CTDev1.AddReg, CoInst.AddReg.ntx86
+AddProperty=CTDev1.AddProperty
+RegisterDlls=CTDev1.NTX86.RegisterDlls
+
+[CTDev2.NTX86]
+Include=ks.inf, wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration
+CopyFiles=SysFiles.CopyList.ntx86,DLL.CopyList.ntx86,EXE.CopyList.ntx86,APO.CopyList.ntx86,CoInst.CopyList.ntx86,AddCat.CopyList.ntx86,Default.CopyList,DefaultDev2.CopyList,StrFiles.CopyList
+AddReg=CTDev2.AddReg, CoInst.AddReg.ntx86
+AddProperty=CTDev1.AddProperty
+RegisterDlls=CTDev1.NTX86.RegisterDlls
+
+[CTDev1.NTAMD64]
+Include=ks.inf, wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration
+CopyFiles=SysFiles.CopyList.amd64,DLL.CopyList.amd64,DLL.CopyList.thunk,EXE.CopyList.amd64,APO.CopyList.amd64,CoInst.CopyList.amd64,AddCat.CopyList.amd64,Default.CopyList,StrFiles.CopyList
+AddReg=CTDev1.AddReg, CoInst.AddReg.amd64
+AddProperty=CTDev1.AddProperty
+RegisterDlls=CTDev1.NTAMD64.RegisterDlls
+
+[CTDev2.NTAMD64]
+Include=ks.inf, wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration
+CopyFiles=SysFiles.CopyList.amd64,DLL.CopyList.amd64,DLL.CopyList.thunk,EXE.CopyList.amd64,APO.CopyList.amd64,CoInst.CopyList.amd64,AddCat.CopyList.amd64,Default.CopyList,DefaultDev2.CopyList,StrFiles.CopyList
+AddReg=CTDev2.AddReg, CoInst.AddReg.amd64
+AddProperty=CTDev1.AddProperty
+RegisterDlls=CTDev1.NTAMD64.RegisterDlls
+
+[CTDev1.AddProperty]
+DeviceVendorWebSite,,,,"http://www.creative.com"
+
+[CTDev1.NTX86.HW]
+AddReg=Security.AddReg
+
+[CTDev2.NTX86.HW]
+AddReg=Security.AddReg
+
+[CTDev1.NTAMD64.HW]
+AddReg=Security.AddReg
+
+[CTDev2.NTAMD64.HW]
+AddReg=Security.AddReg
+
+[Security.AddReg]
+; FILE_DEVICE_SOUND
+HKR,,DeviceType,0x10001,0x0000001D
+; SDDL_DEVOBJ_SYS_ALL_ADM_RWX_WORLD_RWX_RES_RWX
+HKR,,Security,,"D:P(A;;GA;;;SY)(A;;GRGWGX;;;BA)(A;;GRGWGX;;;WD)(A;;GRGWGX;;;RC)"
+
+[CTDev1.NTX86.CoInstallers]
+CopyFiles=CoInst.CopyList.ntx86
+AddReg=CoInst.AddReg.ntx86
+
+[CTDev2.NTX86.CoInstallers]
+CopyFiles=CoInst.CopyList.ntx86
+AddReg=CoInst.AddReg.ntx86
+
+[CTDev1.NTAMD64.CoInstallers]
+CopyFiles=CoInst.CopyList.amd64
+AddReg=CoInst.AddReg.amd64
+
+[CTDev2.NTAMD64.CoInstallers]
+CopyFiles=CoInst.CopyList.amd64
+AddReg=CoInst.AddReg.amd64
+
+[CoInst.AddReg.ntx86]
+HKR,,CoInstallers32,0x00010000,"CtDco32.dll,CtDevCoInstProc"
+HKR,,OriginalSourcePath,,%01%
+HKLM,%CoInstallerInfo%,%DvCoInstall32Name%,,%DvININame%
+
+[CoInst.AddReg.amd64]
+HKR,,CoInstallers32,0x00010000,"CtDco64.dll,CtDevCoInstProc"
+HKR,,OriginalSourcePath,,%01%
+HKLM,%CoInstallerInfo%,%DvCoInstall64Name%,,%DvININame%
+
+[CTDev1.NTX86.Interfaces]
+
+;;Speaker
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_SpeakerWave%,       CTDev1.Interface.SpeakerWave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_SpeakerWave%,       CTDev1.Interface.SpeakerWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_SpeakerWave%,       CTDev1.Interface.SpeakerWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_SpeakerTopo%,       CTDev1.Interface.SpeakerTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_SpeakerTopo%,       CTDev1.Interface.SpeakerTopo
+
+;;LineOut
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineOutWave%,       CTDev1.Interface.LineOutWave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_LineOutWave%,       CTDev1.Interface.LineOutWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_LineOutWave%,       CTDev1.Interface.LineOutWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineOutTopo%,       CTDev1.Interface.LineOutTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_LineOutTopo%,       CTDev1.Interface.LineOutTopo
+
+;;DigitalOut
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOutWave%,   CTDev1.Interface.DigitalOutWave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_DigitalOutWave%,   CTDev1.Interface.DigitalOutWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DigitalOutWave%,   CTDev1.Interface.DigitalOutWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOutTopo%,   CTDev1.Interface.DigitalOutTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DigitalOutTopo%,   CTDev1.Interface.DigitalOutTopo
+
+;;DigitalOut2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOut2Wave%,   CTDev1.Interface.DigitalOut2Wave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_DigitalOut2Wave%,   CTDev1.Interface.DigitalOut2Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DigitalOut2Wave%,   CTDev1.Interface.DigitalOut2Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOut2Topo%,   CTDev1.Interface.DigitalOut2Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DigitalOut2Topo%,   CTDev1.Interface.DigitalOut2Topo
+
+;;DMic
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DMicWave%,           CTDev1.Interface.DMicWave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_DMicWave%,           CTDev1.Interface.DMicWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DMicWave%,           CTDev1.Interface.DMicWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DMicTopo%,           CTDev1.Interface.DMicTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DMicTopo%,           CTDev1.Interface.DMicTopo
+
+;;Mic
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic1Wave%,           CTDev1.Interface.Mic1Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_Mic1Wave%,           CTDev1.Interface.Mic1Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_Mic1Wave%,           CTDev1.Interface.Mic1Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic1Topo%,           CTDev1.Interface.Mic1Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_Mic1Topo%,           CTDev1.Interface.Mic1Topo
+
+;;Mic2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic2Wave%,           CTDev1.Interface.Mic2Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_Mic2Wave%,           CTDev1.Interface.Mic2Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_Mic2Wave%,           CTDev1.Interface.Mic2Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic2Topo%,           CTDev1.Interface.Mic2Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_Mic2Topo%,           CTDev1.Interface.Mic2Topo
+
+;;LineIn1
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn1Wave%,        CTDev1.Interface.LineIn1Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_LineIn1Wave%,        CTDev1.Interface.LineIn1Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_LineIn1Wave%,        CTDev1.Interface.LineIn1Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn1Topo%,        CTDev1.Interface.LineIn1Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_LineIn1Topo%,        CTDev1.Interface.LineIn1Topo
+
+;;LineIn2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn2Wave%,        CTDev1.Interface.LineIn2Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_LineIn2Wave%,        CTDev1.Interface.LineIn2Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_LineIn2Wave%,        CTDev1.Interface.LineIn2Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn2Topo%,        CTDev1.Interface.LineIn2Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_LineIn2Topo%,        CTDev1.Interface.LineIn2Topo
+
+;;DigitalIn
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalInWave%,     CTDev1.Interface.DigitalInWave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_DigitalInWave%,     CTDev1.Interface.DigitalInWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DigitalInWave%,     CTDev1.Interface.DigitalInWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalInTopo%,     CTDev1.Interface.DigitalInTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DigitalInTopo%,     CTDev1.Interface.DigitalInTopo
+
+;;WUHIn
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WUHInWave%,         CTDev1.Interface.WUHInWave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_WUHInWave%,         CTDev1.Interface.WUHInWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_WUHInWave%,         CTDev1.Interface.WUHInWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WUHInTopo%,         CTDev1.Interface.WUHInTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_WUHInTopo%,         CTDev1.Interface.WUHInTopo
+
+[CTDev2.NTX86.Interfaces]
+
+;;Speaker
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_SpeakerWave%,       CTDev1.Interface.SpeakerWave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_SpeakerWave%,       CTDev1.Interface.SpeakerWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_SpeakerWave%,       CTDev1.Interface.SpeakerWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_SpeakerTopo%,       CTDev2.Interface.SpeakerTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_SpeakerTopo%,       CTDev2.Interface.SpeakerTopo
+
+;;LineOut
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineOutWave%,       CTDev1.Interface.LineOutWave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_LineOutWave%,       CTDev1.Interface.LineOutWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_LineOutWave%,       CTDev1.Interface.LineOutWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineOutTopo%,       CTDev2.Interface.LineOutTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_LineOutTopo%,       CTDev2.Interface.LineOutTopo
+
+;;DigitalOut
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOutWave%,   CTDev1.Interface.DigitalOutWave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_DigitalOutWave%,   CTDev1.Interface.DigitalOutWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DigitalOutWave%,   CTDev1.Interface.DigitalOutWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOutTopo%,   CTDev1.Interface.DigitalOutTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DigitalOutTopo%,   CTDev1.Interface.DigitalOutTopo
+
+;;DigitalOut2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOut2Wave%,   CTDev1.Interface.DigitalOut2Wave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_DigitalOut2Wave%,   CTDev1.Interface.DigitalOut2Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DigitalOut2Wave%,   CTDev1.Interface.DigitalOut2Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOut2Topo%,   CTDev1.Interface.DigitalOut2Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DigitalOut2Topo%,   CTDev1.Interface.DigitalOut2Topo
+
+;;DMic
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DMicWave%,           CTDev1.Interface.DMicWave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_DMicWave%,           CTDev1.Interface.DMicWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DMicWave%,           CTDev1.Interface.DMicWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DMicTopo%,           CTDev1.Interface.DMicTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DMicTopo%,           CTDev1.Interface.DMicTopo
+
+;;Mic
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic1Wave%,           CTDev1.Interface.Mic1Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_Mic1Wave%,           CTDev1.Interface.Mic1Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_Mic1Wave%,           CTDev1.Interface.Mic1Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic1Topo%,           CTDev2.Interface.Mic1Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_Mic1Topo%,           CTDev2.Interface.Mic1Topo
+
+;;Mic2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic2Wave%,           CTDev1.Interface.Mic2Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_Mic2Wave%,           CTDev1.Interface.Mic2Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_Mic2Wave%,           CTDev1.Interface.Mic2Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic2Topo%,           CTDev1.Interface.Mic2Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_Mic2Topo%,           CTDev1.Interface.Mic2Topo
+
+;;LineIn1
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn1Wave%,        CTDev1.Interface.LineIn1Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_LineIn1Wave%,        CTDev1.Interface.LineIn1Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_LineIn1Wave%,        CTDev1.Interface.LineIn1Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn1Topo%,        CTDev1.Interface.LineIn1Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_LineIn1Topo%,        CTDev1.Interface.LineIn1Topo
+
+;;LineIn2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn2Wave%,        CTDev1.Interface.LineIn2Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_LineIn2Wave%,        CTDev1.Interface.LineIn2Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_LineIn2Wave%,        CTDev1.Interface.LineIn2Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn2Topo%,        CTDev1.Interface.LineIn2Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_LineIn2Topo%,        CTDev1.Interface.LineIn2Topo
+
+;;DigitalIn
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalInWave%,     CTDev1.Interface.DigitalInWave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_DigitalInWave%,     CTDev1.Interface.DigitalInWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DigitalInWave%,     CTDev1.Interface.DigitalInWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalInTopo%,     CTDev1.Interface.DigitalInTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DigitalInTopo%,     CTDev1.Interface.DigitalInTopo
+
+;;WUHIn
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WUHInWave%,         CTDev1.Interface.WUHInWave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_WUHInWave%,         CTDev1.Interface.WUHInWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_WUHInWave%,         CTDev1.Interface.WUHInWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WUHInTopo%,         CTDev1.Interface.WUHInTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_WUHInTopo%,         CTDev1.Interface.WUHInTopo
+
+[CTDev1.NTAMD64.Interfaces]
+;;Speaker
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_SpeakerWave%,       CTDev1.Interface.SpeakerWave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_SpeakerWave%,       CTDev1.Interface.SpeakerWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_SpeakerWave%,       CTDev1.Interface.SpeakerWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_SpeakerTopo%,       CTDev1.Interface.SpeakerTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_SpeakerTopo%,       CTDev1.Interface.SpeakerTopo
+
+;;LineOut
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineOutWave%,       CTDev1.Interface.LineOutWave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_LineOutWave%,       CTDev1.Interface.LineOutWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_LineOutWave%,       CTDev1.Interface.LineOutWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineOutTopo%,       CTDev1.Interface.LineOutTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_LineOutTopo%,       CTDev1.Interface.LineOutTopo
+
+;;DigitalOut
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOutWave%,   CTDev1.Interface.DigitalOutWave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_DigitalOutWave%,   CTDev1.Interface.DigitalOutWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DigitalOutWave%,   CTDev1.Interface.DigitalOutWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOutTopo%,   CTDev1.Interface.DigitalOutTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DigitalOutTopo%,   CTDev1.Interface.DigitalOutTopo
+
+;;DigitalOut2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOut2Wave%,   CTDev1.Interface.DigitalOut2Wave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_DigitalOut2Wave%,   CTDev1.Interface.DigitalOut2Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DigitalOut2Wave%,   CTDev1.Interface.DigitalOut2Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOut2Topo%,   CTDev1.Interface.DigitalOut2Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DigitalOut2Topo%,   CTDev1.Interface.DigitalOut2Topo
+
+;;DMic
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DMicWave%,           CTDev1.Interface.DMicWave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_DMicWave%,           CTDev1.Interface.DMicWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DMicWave%,           CTDev1.Interface.DMicWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DMicTopo%,           CTDev1.Interface.DMicTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DMicTopo%,           CTDev1.Interface.DMicTopo
+
+;;Mic1
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic1Wave%,           CTDev1.Interface.Mic1Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_Mic1Wave%,           CTDev1.Interface.Mic1Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_Mic1Wave%,           CTDev1.Interface.Mic1Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic1Topo%,           CTDev1.Interface.Mic1Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_Mic1Topo%,           CTDev1.Interface.Mic1Topo
+
+;;Mic2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic2Wave%,           CTDev1.Interface.Mic2Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_Mic2Wave%,           CTDev1.Interface.Mic2Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_Mic2Wave%,           CTDev1.Interface.Mic2Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic2Topo%,           CTDev1.Interface.Mic2Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_Mic2Topo%,           CTDev1.Interface.Mic2Topo
+
+;;LineIn1
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn1Wave%,        CTDev1.Interface.LineIn1Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_LineIn1Wave%,        CTDev1.Interface.LineIn1Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_LineIn1Wave%,        CTDev1.Interface.LineIn1Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn1Topo%,        CTDev1.Interface.LineIn1Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_LineIn1Topo%,        CTDev1.Interface.LineIn1Topo
+
+;;LineIn2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn2Wave%,        CTDev1.Interface.LineIn2Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_LineIn2Wave%,        CTDev1.Interface.LineIn2Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_LineIn2Wave%,        CTDev1.Interface.LineIn2Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn2Topo%,        CTDev1.Interface.LineIn2Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_LineIn2Topo%,        CTDev1.Interface.LineIn2Topo
+
+;;DigitalIn
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalInWave%,     CTDev1.Interface.DigitalInWave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_DigitalInWave%,     CTDev1.Interface.DigitalInWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DigitalInWave%,     CTDev1.Interface.DigitalInWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalInTopo%,     CTDev1.Interface.DigitalInTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DigitalInTopo%,     CTDev1.Interface.DigitalInTopo
+
+;;WUHIn
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WUHInWave%,         CTDev1.Interface.WUHInWave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_WUHInWave%,         CTDev1.Interface.WUHInWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_WUHInWave%,         CTDev1.Interface.WUHInWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WUHInTopo%,         CTDev1.Interface.WUHInTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_WUHInTopo%,         CTDev1.Interface.WUHInTopo
+
+[CTDev2.NTAMD64.Interfaces]
+;;Speaker
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_SpeakerWave%,       CTDev1.Interface.SpeakerWave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_SpeakerWave%,       CTDev1.Interface.SpeakerWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_SpeakerWave%,       CTDev1.Interface.SpeakerWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_SpeakerTopo%,       CTDev2.Interface.SpeakerTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_SpeakerTopo%,       CTDev2.Interface.SpeakerTopo
+
+;;LineOut
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineOutWave%,       CTDev1.Interface.LineOutWave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_LineOutWave%,       CTDev1.Interface.LineOutWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_LineOutWave%,       CTDev1.Interface.LineOutWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineOutTopo%,       CTDev2.Interface.LineOutTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_LineOutTopo%,       CTDev2.Interface.LineOutTopo
+
+;;DigitalOut
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOutWave%,   CTDev1.Interface.DigitalOutWave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_DigitalOutWave%,   CTDev1.Interface.DigitalOutWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DigitalOutWave%,   CTDev1.Interface.DigitalOutWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOutTopo%,   CTDev1.Interface.DigitalOutTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DigitalOutTopo%,   CTDev1.Interface.DigitalOutTopo
+
+;;DigitalOut2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOut2Wave%,   CTDev1.Interface.DigitalOut2Wave
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_DigitalOut2Wave%,   CTDev1.Interface.DigitalOut2Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DigitalOut2Wave%,   CTDev1.Interface.DigitalOut2Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalOut2Topo%,   CTDev1.Interface.DigitalOut2Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DigitalOut2Topo%,   CTDev1.Interface.DigitalOut2Topo
+
+;;DMic
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DMicWave%,           CTDev1.Interface.DMicWave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_DMicWave%,           CTDev1.Interface.DMicWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DMicWave%,           CTDev1.Interface.DMicWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DMicTopo%,           CTDev1.Interface.DMicTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DMicTopo%,           CTDev1.Interface.DMicTopo
+
+;;Mic1
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic1Wave%,           CTDev1.Interface.Mic1Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_Mic1Wave%,           CTDev1.Interface.Mic1Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_Mic1Wave%,           CTDev1.Interface.Mic1Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic1Topo%,           CTDev2.Interface.Mic1Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_Mic1Topo%,           CTDev2.Interface.Mic1Topo
+
+;;Mic2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic2Wave%,           CTDev1.Interface.Mic2Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_Mic2Wave%,           CTDev1.Interface.Mic2Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_Mic2Wave%,           CTDev1.Interface.Mic2Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_Mic2Topo%,           CTDev1.Interface.Mic2Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_Mic2Topo%,           CTDev1.Interface.Mic2Topo
+
+;;LineIn1
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn1Wave%,        CTDev1.Interface.LineIn1Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_LineIn1Wave%,        CTDev1.Interface.LineIn1Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_LineIn1Wave%,        CTDev1.Interface.LineIn1Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn1Topo%,        CTDev1.Interface.LineIn1Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_LineIn1Topo%,        CTDev1.Interface.LineIn1Topo
+
+;;LineIn2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn2Wave%,        CTDev1.Interface.LineIn2Wave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_LineIn2Wave%,        CTDev1.Interface.LineIn2Wave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_LineIn2Wave%,        CTDev1.Interface.LineIn2Wave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_LineIn2Topo%,        CTDev1.Interface.LineIn2Topo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_LineIn2Topo%,        CTDev1.Interface.LineIn2Topo
+
+;;DigitalIn
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalInWave%,     CTDev1.Interface.DigitalInWave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_DigitalInWave%,     CTDev1.Interface.DigitalInWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_DigitalInWave%,     CTDev1.Interface.DigitalInWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_DigitalInTopo%,     CTDev1.Interface.DigitalInTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_DigitalInTopo%,     CTDev1.Interface.DigitalInTopo
+
+;;WUHIn
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WUHInWave%,         CTDev1.Interface.WUHInWave
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_WUHInWave%,         CTDev1.Interface.WUHInWave
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_WUHInWave%,         CTDev1.Interface.WUHInWave
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WUHInTopo%,         CTDev1.Interface.WUHInTopo
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_WUHInTopo%,         CTDev1.Interface.WUHInTopo
+
+[CTDev1.Interface.SpeakerWave]
+AddReg=CTDev1.Interface.SpeakerWave.AddReg
+[CTDev1.Interface.SpeakerWave.AddReg]
+HKR,,FriendlyName,,%SpeakerWaveName%
+HKR,,CLSID,,%Proxy.CLSID%
+;HKR,,SetupPreferredAudioDevices,3,01,00,00,00
+
+[CTDev1.Interface.SpeakerTopo]
+AddReg=CTDev1.Interface.SpeakerTopo.AddReg,EPConfig.AddReg,EP_SPKConfig.AddReg,SoundCoreControl.AddReg,RenderAPO.AddReg
+
+[CTDev2.Interface.SpeakerTopo]
+AddReg=CTDev1.Interface.SpeakerTopo.AddReg,EPConfig.AddReg,EP_SPKConfig.AddReg,SoundCoreControl.AddReg,Device2DriverCfg.AddReg,RenderAPO.AddReg
+
+[CTDev1.Interface.SpeakerTopo.AddReg]
+HKR,,FriendlyName,,%SpeakerTopoName%
+HKR,,CLSID,,%Proxy.CLSID%
+
+[CTDev1.Interface.LineOutWave]
+AddReg=CTDev1.Interface.LineOutWave.AddReg
+[CTDev1.Interface.LineOutWave.AddReg]
+HKR,,FriendlyName,,%LineOutWaveName%
+HKR,,CLSID,,%Proxy.CLSID%
+;HKR,,SetupPreferredAudioDevices,3,01,00,00,00
+
+[CTDev1.Interface.LineOutTopo]
+AddReg=CTDev1.Interface.LineOutTopo.AddReg,EPConfig.AddReg,EP_SPKConfig.AddReg,SoundCoreControl.AddReg,CTDev1Ept.AddReg,RenderAPO.AddReg
+
+[CTDev2.Interface.LineOutTopo]
+AddReg=CTDev1.Interface.LineOutTopo.AddReg,EPConfig.AddReg,EP_SPKConfig.AddReg,SoundCoreControl.AddReg,CTDev2Ept.AddReg,Device2DriverCfg.AddReg,RenderAPO.AddReg
+
+[CTDev1.Interface.LineOutTopo.AddReg]
+HKR,,FriendlyName,,%LineOutTopoName%
+HKR,,CLSID,,%Proxy.CLSID%
+
+[CTDev1.Interface.DigitalOutWave]
+AddReg=CTDev1.Interface.DigitalOutWave.AddReg
+[CTDev1.Interface.DigitalOutWave.AddReg]
+HKR,,FriendlyName,,%DigitalOutWaveName%
+HKR,,CLSID,,%Proxy.CLSID% 
+
+[CTDev1.Interface.DigitalOutTopo]
+AddReg=CTDev1.Interface.DigitalOutTopo.AddReg,EPConfig.AddReg
+[CTDev1.Interface.DigitalOutTopo.AddReg]
+HKR,,FriendlyName,,%DigitalOutTopoName%
+HKR,,CLSID,,%Proxy.CLSID% 
+
+[CTDev1.Interface.DigitalOut2Wave]
+AddReg=CTDev1.Interface.DigitalOut2Wave.AddReg
+[CTDev1.Interface.DigitalOut2Wave.AddReg]
+HKR,,FriendlyName,,%DigitalOut2WaveName%
+HKR,,CLSID,,%Proxy.CLSID% 
+
+[CTDev1.Interface.DigitalOut2Topo]
+AddReg=CTDev1.Interface.DigitalOut2Topo.AddReg,EPConfig.AddReg
+[CTDev1.Interface.DigitalOut2Topo.AddReg]
+HKR,,FriendlyName,,%DigitalOut2TopoName%
+HKR,,CLSID,,%Proxy.CLSID% 
+
+[CTDev1.Interface.DMicWave]
+AddReg=CTDev1.Interface.DMicWave.AddReg
+[CTDev1.Interface.DMicWave.AddReg]
+HKR,,FriendlyName,,%DMicWaveName%
+HKR,,CLSID,,%Proxy.CLSID% 
+
+[CTDev1.Interface.DMicTopo]
+AddReg=CTDev1.Interface.DMicTopo.AddReg,EPConfig.AddReg,DigitalMic.AddReg
+[CTDev1.Interface.DMicTopo.AddReg]
+HKR,,FriendlyName,,%DMicTopoName%
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,"EP\\0",%CTPKEY_Endpoint_KSName%,,%KSNAME_DMicWave%
+
+[CTDev1.Interface.Mic1Wave]
+AddReg=CTDev1.Interface.Mic1Wave.AddReg
+[CTDev1.Interface.Mic1Wave.AddReg]
+HKR,,FriendlyName,,%Mic1WaveName%
+HKR,,CLSID,,%Proxy.CLSID% 
+
+[CTDev1.Interface.Mic1Topo]
+AddReg=CTDev1.Interface.Mic1Topo.AddReg,EPConfig.AddReg,Headset.AddReg
+
+[CTDev2.Interface.Mic1Topo]
+AddReg=CTDev1.Interface.Mic1Topo.AddReg,EPConfig.AddReg,Headset.AddReg,Device2HeadsetMicDefault.AddReg
+
+[CTDev1.Interface.Mic1Topo.AddReg]
+HKR,,FriendlyName,,%Mic1TopoName%
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,"EP\\0",%CTPKEY_Endpoint_KSName%,,%KSNAME_Mic1Wave%
+
+[CTDev1.Interface.Mic2Wave]
+AddReg=CTDev1.Interface.Mic2Wave.AddReg
+[CTDev1.Interface.Mic2Wave.AddReg]
+HKR,,FriendlyName,,%Mic2WaveName%
+HKR,,CLSID,,%Proxy.CLSID% 
+
+[CTDev1.Interface.Mic2Topo]
+AddReg=CTDev1.Interface.Mic2Topo.AddReg,EPConfig.AddReg
+[CTDev1.Interface.Mic2Topo.AddReg]
+HKR,,FriendlyName,,%Mic2TopoName%
+HKR,,CLSID,,%Proxy.CLSID% 
+HKR,"EP\\0",%CTPKEY_Endpoint_KSName%,,%KSNAME_Mic2Wave%
+
+[CTDev1.Interface.LineIn1Wave]
+AddReg=CTDev1.Interface.LineIn1Wave.AddReg
+[CTDev1.Interface.LineIn1Wave.AddReg]
+HKR,,FriendlyName,,%LineIn1WaveName%
+HKR,,CLSID,,%Proxy.CLSID% 
+
+[CTDev1.Interface.LineIn1Topo]
+AddReg=CTDev1.Interface.LineIn1Topo.AddReg,EPConfig.AddReg
+[CTDev1.Interface.LineIn1Topo.AddReg]
+HKR,,FriendlyName,,%LineIn1TopoName%
+HKR,,CLSID,,%Proxy.CLSID% 
+HKR,"EP\\0",%CTPKEY_Endpoint_KSName%,,%KSNAME_LineIn1Wave%
+
+[CTDev1.Interface.LineIn2Wave]
+AddReg=CTDev1.Interface.LineIn2Wave.AddReg
+[CTDev1.Interface.LineIn2Wave.AddReg]
+HKR,,FriendlyName,,%LineIn2WaveName%
+HKR,,CLSID,,%Proxy.CLSID% 
+
+[CTDev1.Interface.LineIn2Topo]
+AddReg=CTDev1.Interface.LineIn2Topo.AddReg,EPConfig.AddReg
+[CTDev1.Interface.LineIn2Topo.AddReg]
+HKR,,FriendlyName,,%LineIn2TopoName%
+HKR,,CLSID,,%Proxy.CLSID% 
+HKR,"EP\\0",%CTPKEY_Endpoint_KSName%,,%KSNAME_LineIn2Wave%
+
+[CTDev1.Interface.DigitalInWave]
+AddReg=CTDev1.Interface.DigitalInWave.AddReg
+[CTDev1.Interface.DigitalInWave.AddReg]
+HKR,,FriendlyName,,%DigitalInWaveName%
+HKR,,CLSID,,%Proxy.CLSID% 
+
+[CTDev1.Interface.DigitalInTopo]
+AddReg=CTDev1.Interface.DigitalInTopo.AddReg,EPConfig.AddReg,HDMIIn.AddReg
+[CTDev1.Interface.DigitalInTopo.AddReg]
+HKR,,FriendlyName,,%DigitalInTopoName%
+HKR,,CLSID,,%Proxy.CLSID% 
+
+[CTDev1.Interface.WUHInWave]
+AddReg=CTDev1.Interface.WUHInWave.AddReg
+[CTDev1.Interface.WUHInWave.AddReg]
+HKR,,FriendlyName,,%WUHInWaveName%
+HKR,,CLSID,,%Proxy.CLSID% 
+
+[CTDev1.Interface.WUHInTopo]
+AddReg=CTDev1.Interface.WUHInTopo.AddReg,EPConfig.AddReg
+[CTDev1.Interface.WUHInTopo.AddReg]
+HKR,,FriendlyName,,%WUHInTopoName%
+HKR,,CLSID,,%Proxy.CLSID% 
+
+[CTDev1.NTX86.Services]
+AddService = cthda, 0x00000002, CTHda_Service_Install
+AddService = CtHdaSvc,, CTHdaSvc_Service_Install
+
+[CTDev2.NTX86.Services]
+AddService = cthda, 0x00000002, CTHda_Service_Install
+AddService = CtHdaSvc,, CTHdaSvc_Service_Install
+
+[CTDev1.NTAMD64.Services]
+AddService = cthda, 0x00000002, CTHda_Service_Install
+;;AddService = CtHdaSvc,, CtHSvc64_Service_Install
+AddService = CtHdaSvc,, CTHdaSvcWow_Service_Install
+
+[CTDev2.NTAMD64.Services]
+AddService = cthda, 0x00000002, CTHda_Service_Install
+;;AddService = CtHdaSvc,, CtHSvc64_Service_Install
+AddService = CtHdaSvc,, CTHdaSvcWow_Service_Install
+
+[CTHda_Service_Install]
+DisplayName   = %Creative.CTHdaDesc%
+ServiceType   = 1       ; SERVICE_KERNEL_DRIVER
+StartType     = 3       ; SERVICE_DEMAND_START
+ErrorControl  = 1       ; SERVICE_ERROR_NORMAL
+ServiceBinary = %10%\system32\drivers\cthda.sys
+
+[CTHdaSvc_Service_Install]
+DisplayName   = %Creative.CTHdaSvcDesc%
+ServiceType   = 0x10      ; SERVICE_WIN32_OWN_PROCESS 
+StartType     = 2       ; SERVICE_AUTO_START
+ErrorControl  = 1       ; SERVICE_ERROR_NORMAL
+ServiceBinary = %10%\system32\CtHdaSvc.exe
+Dependencies  = cthda
+
+[CTHdaSvcWow_Service_Install]
+DisplayName   = %Creative.CTHdaSvcDesc%
+ServiceType   = 0x10      ; SERVICE_WIN32_OWN_PROCESS 
+StartType     = 2       ; SERVICE_AUTO_START
+ErrorControl  = 1       ; SERVICE_ERROR_NORMAL
+ServiceBinary = %10%\sysWow64\CtHdaSvc.exe
+Dependencies  = cthda
+
+[CtHSvc64_Service_Install]
+DisplayName   = %Creative.CTHdaSvcDesc%
+ServiceType   = 0x10      ; SERVICE_WIN32_OWN_PROCESS 
+StartType     = 2       ; SERVICE_AUTO_START
+ErrorControl  = 1       ; SERVICE_ERROR_NORMAL
+ServiceBinary = %10%\system32\CtHSvc64.exe
+Dependencies  = cthda
+
+[CTDev1.AddReg]
+HKR,,AssociatedFilters,,"wdmaud,swmidi,redbook"
+HKR,,Driver,,cthda.sys
+HKR,Drivers,SubClasses,,"wave,midi,mixer,aux"
+HKR,Drivers\wave\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\midi\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\mixer\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\aux\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\wave\wdmaud.drv,Description,,%Creative.Device1Desc%
+HKR,Drivers\midi\wdmaud.drv,Description,,%Creative.Device1Desc%
+HKR,Drivers\mixer\wdmaud.drv,Description,,%Creative.Device1Desc%
+HKR,Drivers\aux\wdmaud.drv,Description,,%Creative.Device1Desc%
+HKR,,SetupPreferredAudioDevices,3,01,00,00,00
+HKR,,DisableSetupDiChangeState,1,00,00,00,00 ; Set to 01,00,00,00 to disable proppage restarting of driver on policy change
+HKR,PowerSettings,ConservationIdleTime,3,1e,00,00,00
+HKR,PowerSettings,PerformanceIdleTime,3,00,00,00,00
+HKR,PowerSettings,IdlePowerState,3,03,00,00,00
+
+;Device Specific Overwrite
+HKR,DeviceSpecificOverwrite,SupportPortCDMicMultiplex,0x00010001,0x00000001
+HKR,DeviceSpecificOverwrite,DECControl,0x00010001,0x00000001
+HKR,DeviceSpecificOverwrite,LineoutSwitchNUD,0x00010001,0x00000001
+
+;Driver Settings
+HKR,DriverSettings,DolphinDmic,0x00010001,0x00000001
+HKR,DriverSettings,DMicConfig,0x00010001,0x00000001
+HKR,DriverSettings,SupportD3Cold,0x00010001,0x00000001
+HKR,DriverSettings,MultichannelBasicRatesOnly,0x00010001,0x00000001
+
+; PinConfig
+HKR,PinConfig,ConfigEx_4,0x00010001,0x00000023
+HKR,PinConfig,ConfigEx_5,0x00010001,0x00000022
+HKR,PinConfig,ConfigEx_6,0x00010001,0x00000001
+HKR,PinConfig,ConfigEx_7,0x00010001,0x00000010
+
+; MPIO_Config
+HKR,MPIO_Config,DMicChanEnableMask,0x00010001,0x00000003
+HKR,MPIO_Config,DMicData1Pin,0x00010001,0x00000003
+HKR,MPIO_Config,DMicDolphin,0x00010001,0x00000001
+HKR,MPIO_Config,DMicDolphInSel,0x00010001,0x00000000
+HKR,MPIO_Config,DMicEnable,0x00010001,0x00000000
+HKR,MPIO_Config,DMicMClkPin,0x00010001,0x00000001
+HKR,MPIO_Config,DMicRate48,0x00010001,0x00000000
+HKR,MPIO_Config,EAPDPin,0x00010001,0x00000000
+
+; CodecConfig
+HKR,CodecConfig,LineOutMaxVolume, 0x00010001, 0x00000000 ;;mB (0dB)
+
+;Endpoint name Overwrite
+HKR,EndpointNameOverwrite,%KSNAME_DigitalOutTopo%,,%GUID.DevName_DigitalOut2%
+HKR,EndpointNameOverwrite,%KSNAME_Mic1Topo%,,%GUID.DevName_HeadsetMic%
+HKR,EndpointNameOverwrite,%KSNAME_Mic2Topo%,,%GUID.DevName_Mic1%
+HKR,EndpointNameOverwrite,%KSNAME_DigitalInTopo%,,%GUID.DevName_HDMIIn%
+
+HKLM,SYSTEM\CurrentControlSet\Control\CtHda\DriverSettings,Context,0x00010001,0x00000000
+
+HKLM,SOFTWARE\Creative Tech\CtHdaCtl\ForceDefault,Render,0x00010001,0x00000000
+
+[CTDev2.AddReg]
+HKR,,AssociatedFilters,,"wdmaud,swmidi,redbook"
+HKR,,Driver,,cthda.sys
+HKR,Drivers,SubClasses,,"wave,midi,mixer,aux"
+HKR,Drivers\wave\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\midi\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\mixer\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\aux\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\wave\wdmaud.drv,Description,,%Creative.Device1Desc%
+HKR,Drivers\midi\wdmaud.drv,Description,,%Creative.Device1Desc%
+HKR,Drivers\mixer\wdmaud.drv,Description,,%Creative.Device1Desc%
+HKR,Drivers\aux\wdmaud.drv,Description,,%Creative.Device1Desc%
+HKR,,SetupPreferredAudioDevices,3,01,00,00,00
+HKR,,DisableSetupDiChangeState,1,00,00,00,00 ; Set to 01,00,00,00 to disable proppage restarting of driver on policy change
+HKR,PowerSettings,ConservationIdleTime,3,1e,00,00,00
+HKR,PowerSettings,PerformanceIdleTime,3,00,00,00,00
+HKR,PowerSettings,IdlePowerState,3,03,00,00,00
+
+;Device Specific Overwrite
+HKR,DeviceSpecificOverwrite,SupportPortCDMicMultiplex,0x00010001,0x00000001
+HKR,DeviceSpecificOverwrite,DECControl,0x00010001,0x00000001
+HKR,DeviceSpecificOverwrite,LineoutSwitchNUD,0x00010001,0x00000001
+HKR,DeviceSpecificOverwrite,SpeakerConfigAttrib,0x00010001,0x00000001
+HKR,DeviceSpecificOverwrite,DriverConfig,0x00010001,0x00000001
+HKR,DeviceSpecificOverWrite,MPIO_HPLineMic_Sel,0x00010001,0x00000004
+HKR,DeviceSpecificOverWrite,MPIO_HPLineMic_Mute,0x00010001,0x00000002
+
+;Driver Settings
+HKR,DriverSettings,DolphinDmic,0x00010001,0x00000001
+HKR,DriverSettings,DMicConfig,0x00010001,0x00000001
+HKR,DriverSettings,SupportD3Cold,0x00010001,0x00000001
+HKR,DriverSettings,MultichannelBasicRatesOnly,0x00010001,0x00000001
+
+; PinConfig
+HKR,PinConfig,ConfigEx_4,0x00010001,0x00000022
+HKR,PinConfig,ConfigEx_5,0x00010001,0x00000021
+HKR,PinConfig,ConfigEx_6,0x00010001,0x00000001
+HKR,PinConfig,ConfigEx_7,0x00010001,0x00000010
+
+; MPIO_Config
+HKR,MPIO_Config,DMicChanEnableMask,0x00010001,0x00000003
+HKR,MPIO_Config,DMicData1Pin,0x00010001,0x00000003
+HKR,MPIO_Config,DMicDolphin,0x00010001,0x00000001
+HKR,MPIO_Config,DMicDolphInSel,0x00010001,0x00000000
+HKR,MPIO_Config,DMicEnable,0x00010001,0x00000000
+HKR,MPIO_Config,DMicMClkPin,0x00010001,0x00000001
+HKR,MPIO_Config,DMicRate48,0x00010001,0x00000000
+HKR,MPIO_Config,EAPDPin,0x00010001,0x00000000
+
+; CodecConfig
+HKR,CodecConfig,LineOutMaxVolume, 0x00010001, 0x00000000 ;;mB (0dB)
+
+;Endpoint name Overwrite
+HKR,EndpointNameOverwrite,%KSNAME_DigitalOutTopo%,,%GUID.DevName_DigitalOut2%
+HKR,EndpointNameOverwrite,%KSNAME_Mic1Topo%,,%GUID.DevName_HeadsetMic%
+HKR,EndpointNameOverwrite,%KSNAME_Mic2Topo%,,%GUID.DevName_Mic1%
+HKR,EndpointNameOverwrite,%KSNAME_DigitalInTopo%,,%GUID.DevName_HDMIIn%
+
+HKLM,SYSTEM\CurrentControlSet\Control\CtHda\DriverSettings,Context,0x00010001,0x00000000
+
+HKLM,SOFTWARE\Creative Tech\CtHdaCtl\ForceDefault,Render,0x00010001,0x00000000
+
+[EPConfig.AddReg]
+HKR,"EP\\0",%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_ANY%
+HKR,"EP\\0",%PKEY_AudioEndpoint_Supports_EventDriven_Mode%,0x00010001,0x1
+HKR,"EP\\0",%PKEY_AudioEngine_OEMFormat%,0x0001,41,00,18,74,28,00,00,00,FE,FF,02,00,80,BB,00,00,00,DC,05,00,08,00,20,00,16,00,18,00,03,00,00,00,01,00,00,00,00,00,10,00,80,00,00,AA,00,38,9B,71
+
+[EP_SPKConfig.AddReg]
+;;HKR,"EP\\0",%PKEY_AudioEngine_DeviceFormat%,0x0001,41,00,18,74,28,00,00,00,FE,FF,06,00,80,BB,00,00,00,94,11,00,18,00,20,00,16,00,18,00,3F,00,00,00,01,00,00,00,00,00,10,00,80,00,00,AA,00,38,9B,71
+HKR,"EP\\0",%PKEY_AudioEngine_DeviceFormat%,0x0001,41,00,49,74,01,00,00,00,FE,FF,02,00,80,BB,00,00,00,DC,05,00,08,00,20,00,16,00,18,00,03,00,00,00,01,00,00,00,00,00,10,00,80,00,00,AA,00,38,9B,71
+HKR,"EP\\0",%PKEY_AudioEngine_PhysicalSpeaker%,0x00010001,0x3
+HKR,"EP\\0",%PKEY_AudioEngine_FullRangeSpeaker%,0x00010001,0x3
+
+[RenderAPO.AddReg]
+HKR,"EP\\0",%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_ANY%
+;;HKR,"EP\\0",%PKEY_EFFECTNODEINFO_RENDER%,,%CTRFX_EFFECTNODEINFO_RENDER_CLSID%
+HKR,"FX\\0",%PKEY_SYSFX_Association%,,%KSNODETYPE_SPEAKER%
+HKR,"FX\\0",%PKEY_DisplayName%,,%CTRFX_FriendlyName%
+HKR,"FX\\0",%PKEY_SYSFX_PreMixClsid%,,%CTRFX_PREMIX_CLSID%
+HKR,"FX\\0",%PKEY_SYSFX_StreamEffectClsid%,,%CTRFX_SFX_CLSID%
+;;HKR,"FX\\0",%PKEY_SYSFX_ModeEffectClsid%,,%CTRFX_POSTMIX_CLSID%
+;;HKR,"FX\\0",%PKEY_SYSFX_UiClsid%,,%CTRFX_UI_CLSID%
+HKR,"FX\\0",%PKEY_LFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
+HKR,"FX\\0",%PKEY_SFX_ProcessingModes_Supported_For_Streaming%,0x00010000,%AUDIO_SIGNALPROCESSINGMODE_DEFAULT%
+
+[SoundCoreControl.AddReg]
+HKR,"EP\\0",%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_ANY%
+HKR,"EP\\0",%CTPKEY_SOUNDCORECTL_CLSID%,,%GUID.SoundCoreCtlClsId%
+HKR,"EP\\0",%PKEY_CTGUID%,,%CT_GUID%
+HKR,"EP\\0",%PKEY_CTDEFAULT%,%REG_BINARY%,0b,00,63,00,00,01,00,00,01,00,00,00
+
+[Device2DriverCfg.AddReg]
+HKR,"EP\\0",%CTPKEY_DriverConfig%,0x00010001,0x00000001
+
+[CTDev1Ept.AddReg]
+HKR,"FX\\0",%PKEY_AudioEndpoint_DefXML%,,"%10%\CTDev1.xml"
+HKR,"FX\\0",%PKEY_AudioEndpoint_Mixer_DefXML%,,"%10%\CTDev1M.xml"
+
+[CTDev2Ept.AddReg]
+HKR,"FX\\0",%PKEY_AudioEndpoint_DefXML%,,"%10%\CTDev2.xml"
+HKR,"FX\\0",%PKEY_AudioEndpoint_Mixer_DefXML%,,"%10%\CTDev2M.xml"
+
+[DigitalMic.AddReg]
+HKR,"EP\\0",%PKEY_AudioEndpoint_Icon%,,"%10%\system32\mmres.dll,-3020"
+
+[HDMIIn.AddReg]
+HKR,"EP\\0",%PKEY_AudioEndpoint_Icon%,,"%10%\system32\mmres.dll,-3017"
+
+[Headset.AddReg]
+HKR,"EP\\0",%PKEY_AudioEndpoint_Icon%,,"%10%\system32\mmres.dll,-3015"
+
+[Device2HeadsetMicDefault.AddReg]
+HKR,"EP\\0",%CTPKEY_NeedRestore%,%REG_BINARY%,0b,00,bc,74,01,00,00,00,01,00,00,00
+HKR,"EP\\0",%CTPKEY_NeedRestore_Volume%,%REG_BINARY%,04,00,bc,74,01,00,00,00,00,00,00,00
+HKR,"EP\\0",%CTPKEY_NeedRestore_Mute%,%REG_BINARY%,0b,00,bc,74,01,00,00,00,00,00,00,00
+HKR,"EP\\0",%CTPKEY_NeedRestore_Boost%,%REG_BINARY%,04,00,bc,74,01,00,00,00,00,00,a0,41
+
+[SysFiles.CopyList.ntx86]
+cthda.sys
+
+[SysFiles.CopyList.amd64]
+cthda.sys
+
+[CoInst.CopyList.ntx86]
+CtDco32.dll
+CtHda.ini
+
+[CoInst.CopyList.amd64]
+CtDco64.dll
+CtHda.ini
+
+[EXE.CopyList.ntx86]
+CtHdaSvc.exe
+
+[EXE.CopyList.amd64]
+CtHSvc64.exe
+
+[DLL.CopyList.ntx86]
+CtHdaCtl.dll
+CtHdAsio.dll
+
+[DLL.CopyList.amd64]
+CtHdaC64.dll
+CtHdAs64.dll
+
+[DLL.CopyList.thunk]
+CtHdaCtl.dll
+CtHdaSvc.exe
+CtHdAsio.dll
+
+[APO.CopyList.ntx86]
+CTHRFX32.dll
+
+[APO.CopyList.amd64]
+CTHRFX64.dll
+
+[Default.CopyList]
+MEptDef.exe
+InstHlp.exe
+
+[DefaultDev2.CopyList]
+CTDev2M.xml
+
+[StrFiles.CopyList]
+cthdaeng.reg
+
+[AddCat.CopyList.ntx86]
+AddCat.exe
+CTHRFX32.hda
+
+[AddCat.CopyList.amd64]
+AddCat.exe
+CTHRFX64.hda
+
+[CTDev1.NTX86.RegisterDlls]
+11,,CTHRFX32.dll,1
+
+[CTDev1.NTAMD64.RegisterDlls]
+11,,CTHRFX64.dll,1
+
+[DestinationDirs]
+DefaultDestDir          = 10,system32\drivers
+SysFiles.CopyList.ntx86 = 10,system32\drivers       ; %SystemRoot%\system32\drivers
+SysFiles.CopyList.amd64 = 10,system32\drivers       ; %SystemRoot%\system32\drivers
+CoInst.CopyList.ntx86   = 11                        ; (Win9X)%Windows%\system,(WinNT)%SystemRoot%\system32
+CoInst.CopyList.amd64   = 11                        ; (Win9X)%Windows%\system,(WinNT)%SystemRoot%\system32
+DLL.CopyList.ntx86      = 11                        ; (Win9X)%Windows%\system,(WinNT)%SystemRoot%\system32
+DLL.CopyList.amd64      = 11               	        ; (Win9X)%Windows%\system,(WinNT)%SystemRoot%\system32
+DLL.CopyList.thunk      = 10,SysWOW64               ; %SystemRoot%\SysWOW64
+EXE.CopyList.ntx86      = 11                        ; (Win9X)%Windows%\system,(WinNT)%SystemRoot%\system32
+EXE.CopyList.amd64      = 11	               	    ; (Win9X)%Windows%\system,(WinNT)%SystemRoot%\system32
+APO.CopyList.ntx86      = 11                        ; (Win9X)%Windows%\system,(WinNT)%SystemRoot%\system32
+APO.CopyList.amd64      = 11                        ; %SystemRoot%\system32
+AddCat.CopyList.ntx86 = 10		;%SystemRoot%
+AddCat.CopyList.amd64 = 10	;%SystemRoot%
+Default.CopyList = 10		;%SystemRoot%
+StrFiles.CopyList = 10 		;%SystemRoot%
+DefaultDev2.CopyList = 10	;%SystemRoot%
+
+[SourceDisksNames]
+101 = %DriverDisk%,,
+
+[SourceDisksFiles]
+cthda.sys       = 101,I386
+CTHRFX32.dll     = 101,I386
+CtHdaCtl.dll    = 101,I386
+CtHdAsio.dll    = 101,I386
+CtHdaSvc.exe    = 101,I386
+CtDco32.dll     = 101,I386
+CtHda.ini       = 101
+CTHRFX32.hda = 101
+AddCat.exe = 101,I386
+MEptDef.exe = 101,Common
+InstHlp.exe = 101,Common
+cthdaeng.reg = 101,Lang
+CTDev2M.xml = 101,Common
+
+[SourceDisksFiles.amd64]
+cthda.sys       = 101,AMD64
+CTHRFX64.dll     = 101,AMD64
+CtHdaC64.dll    = 101,AMD64
+CtHdAs64.dll    = 101,AMD64
+CtHSvc64.exe    = 101,AMD64
+CtDco64.dll     = 101,AMD64
+CtHdaCtl.dll    = 101,I386
+CtHdAsio.dll    = 101,I386
+CtHdaSvc.exe    = 101,I386
+CtHda.ini       = 101
+CTHRFX64.hda = 101
+AddCat.exe = 101,I386
+MEptDef.exe = 101,Common
+InstHlp.exe = 101,Common
+cthdaeng.reg = 101,Lang
+CTDev2M.xml = 101,Common
+
+[Strings]
+
+CREAF                       = "CREATIVE"
+MfgName                     = "Creative Technology Ltd."
+DriverDisk                  = "Creative Installer CD-ROM"
+
+Creative.Device1Desc        = "Sound Blaster Recon3Di"
+Creative.CTHdaDesc          = "Sound Core3D(CtHda.sys)"
+Creative.CTHdaSvcDesc       = "Sound Core3D Service"
+
+KSNAME_SpeakerWave          = "SpeakerWave"
+KSNAME_SpeakerTopo          = "SpeakerTopo"
+KSNAME_LineOutWave          = "LineOutWave"
+KSNAME_LineOutTopo          = "LineOutTopo"
+KSNAME_DigitalOutWave       = "DigitalOutWave"
+KSNAME_DigitalOutTopo       = "DigitalOutTopo"
+KSNAME_DigitalOut2Wave      = "DigitalOut2Wave"
+KSNAME_DigitalOut2Topo      = "DigitalOut2Topo"
+KSNAME_DMicWave             = "DMicWave"
+KSNAME_DMicTopo             = "DMicTopo"
+KSNAME_Mic1Wave             = "Mic1Wave"
+KSNAME_Mic1Topo             = "Mic1Topo"
+KSNAME_Mic2Wave             = "Mic2Wave"
+KSNAME_Mic2Topo             = "Mic2Topo"
+KSNAME_LineIn1Wave          = "LineIn1Wave"
+KSNAME_LineIn1Topo          = "LineIn1Topo"
+KSNAME_LineIn2Wave          = "LineIn2Wave"
+KSNAME_LineIn2Topo          = "LineIn2Topo"
+KSNAME_DigitalInWave        = "DigitalInWave"
+KSNAME_DigitalInTopo        = "DigitalInTopo"
+KSNAME_WUHInWave            = "WUHInWave"
+KSNAME_WUHInTopo            = "WUHInTopo"
+
+SpeakerWaveName             = "Malcolm Speakers"
+SpeakerTopoName             = "Malcolm Speakers"
+LineOutWaveName             = "Malcolm Lineout/Headphone"
+LineOutTopoName             = "Malcolm Lineout/Headphone"
+DigitalOutWaveName          = "Malcolm DigitalOutWave"
+DigitalOutTopoName          = "Malcolm DigitalOutTopo"
+DigitalOut2WaveName         = "Malcolm DigitalOut2Wave"
+DigitalOut2TopoName         = "Malcolm DigitalOut2Topo"
+DMicWaveName                = "Malcolm DMicWave"
+DMicTopoName                = "Malcolm DMicTopo"
+Mic1WaveName                = "Malcolm Mic1Wave"
+Mic1TopoName                = "Malcolm Mic1Topo"
+Mic2WaveName                = "Malcolm Mic2Wave"
+Mic2TopoName                = "Malcolm Mic2Topo"
+LineIn1WaveName             = "Malcolm LineIn1Wave"
+LineIn1TopoName             = "Malcolm LineIn1Topo"
+LineIn2WaveName             = "Malcolm LineIn2Wave"
+LineIn2TopoName             = "Malcolm LineIn2Topo"
+DigitalInWaveName           = "Malcolm DigitalInWave"
+DigitalInTopoName           = "Malcolm DigitalInTopo"
+WUHInWaveName               = "Malcolm WUHInWave"
+WUHInTopoName               = "Malcolm WUHInTopo"
+
+;; String for CoInstaller
+CoInstallerInfo          ="SYSTEM\CurrentControlSet\Control\Creative Tech\Coinstaller"
+DvCoInstall32Name	="ctDco32"
+DvCoInstall64Name	="ctDco64"
+DvININame              	="ctHda.ini"
+
+;;Localizable strings
+Name.DevName_Headphone_Speakers = "Speaker/Headphone"
+Name.DevName_Headphone          = "Headphone"
+Name.DevName_DigitalOut         = "SPDIF-Out"
+Name.DevName_LineIn1            = "Line-In 2"
+Name.DevName_LineIn2            = "Line-In"
+Name.DevName_Mic1               = "Microphone"
+Name.DevName_Mic2               = "Microphone 2"
+Name.DevName_DigitalIn          = "Digital-In"
+Name.DevName_WUHIn              = "What U Hear"
+Name.DevName_DMic		= "Microphone Array"
+Name.DevName_DigitalOut2	= "Digital Output"
+Name.DevName_HDMIIn		= "HDMI In"
+Name.DevName_HeadsetMic		= "Headset (Mic)"
+
+Name.ControlName_Volume         = "Volume"
+Name.ControlName_Mute           = "Mute"
+Name.ControlName_Boost          = "Microphone Boost"
+
+MediaCategories                 = "SYSTEM\CurrentControlSet\Control\MediaCategories"
+GUID.DevName_Headphone_Speakers = "{03985850-E371-4a03-855A-96921FA7F8B8}"
+GUID.DevName_DigitalOut         = "{03985851-E371-4a03-855A-96921FA7F8B8}"
+GUID.DevName_LineIn1            = "{03985852-E371-4a03-855A-96921FA7F8B8}"
+GUID.DevName_LineIn2            = "{03985853-E371-4a03-855A-96921FA7F8B8}"
+GUID.DevName_Mic1               = "{03985854-E371-4a03-855A-96921FA7F8B8}"
+GUID.DevName_Mic2               = "{03985855-E371-4a03-855A-96921FA7F8B8}"
+GUID.DevName_DigitalIn          = "{03985856-E371-4a03-855A-96921FA7F8B8}"
+GUID.DevName_WUHIn              = "{03985857-E371-4a03-855A-96921FA7F8B8}"
+GUID.DevName_Headphone          = "{03985858-E371-4a03-855A-96921FA7F8B8}"
+GUID.DevName_DMic		= "{0398585A-E371-4a03-855A-96921FA7F8B8}"
+GUID.DevName_DigitalOut2	= "{0398585B-E371-4a03-855A-96921FA7F8B8}"
+GUID.DevName_HDMIIn		= "{0398585C-E371-4a03-855A-96921FA7F8B8}"
+GUID.DevName_HeadsetMic		= "{0398585D-E371-4a03-855A-96921FA7F8B8}"
+
+GUID.ControlName_Volume         = "{95C1EF70-3E6D-4f32-B468-2681F1120D20}"
+GUID.ControlName_Mute           = "{95C1EF71-3E6D-4f32-B468-2681F1120D20}"
+GUID.ControlName_Boost          = "{95C1EF72-3E6D-4f32-B468-2681F1120D20}"
+
+Proxy.CLSID                                 = "{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+KSCATEGORY_AUDIO                            = "{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_RENDER                           = "{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_CAPTURE                          = "{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_TOPOLOGY                         = "{DDA54A40-1E4C-11D1-A050-405705C10000}"
+KSCATEGORY_REALTIME                         = "{EB115FFC-10C8-4964-831D-6DCB02E6F23F}"
+
+CTPKEY_SOUNDCORECTL_CLSID                   = "{C949C6AA-132B-4511-BB1B-35261A2A6333},0"
+GUID.SoundCoreCtlClsId                      = "{7BFF1F7F-1D65-49A0-AE26-7903C41BC5B3}"
+CTPKEY_Endpoint_KSName			    = "{C0C75433-F236-4e21-A4A8-D88B420128A8},0"
+CTPKEY_DriverConfig			    = "{93E8DC30-0135-4A12-A5E0-269CFF0F2B41},0"
+CTPKEY_NeedRestore                          = "{93E8DC30-0135-4A12-A5E0-269CFF0F2B41},1"
+CTPKEY_NeedRestore_Volume                   = "{93E8DC30-0135-4A12-A5E0-269CFF0F2B41},2"
+CTPKEY_NeedRestore_Mute                     = "{93E8DC30-0135-4A12-A5E0-269CFF0F2B41},3"
+CTPKEY_NeedRestore_Boost                    = "{93E8DC30-0135-4A12-A5E0-269CFF0F2B41},4"
+
+PKEY_SYSFX_Association                      = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},0"
+PKEY_SYSFX_PreMixClsid                      = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},1"
+PKEY_SYSFX_PostMixClsid                     = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},2"
+PKEY_SYSFX_UiClsid                          = "{D04E05A6-594B-4FB6-A80D-01AF5EED7D1D},3"
+PKEY_SYSFX_StreamEffectClsid                = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},5"
+PKEY_SYSFX_ModeEffectClsid                  = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},6"
+PKEY_SYSFX_EndpointEffectClsid              = "{D04E05A6-594B-4fb6-A80D-01AF5EED7D1D},7"
+PKEY_DisplayName                            = "{B725F130-47EF-101A-A5F1-02608C9EEBAC},10"
+PKEY_AudioEndpoint_Ext_UiClsid              = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},1"
+PKEY_AudioEndpoint_Association              = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},2"
+PKEY_AudioEndpoint_ControlPanelPageProvider = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E}"
+PKEY_AudioEngine_OEMFormat                  = "{E4870E26-3CC5-4CD2-BA46-CA0A9A70ED04},3"
+PKEY_AudioEndpoint_Supports_EventDriven_Mode= "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},7"
+PKEY_EFFECTNODEINFO_RENDER                  = "{F1056047-B091-4d85-A5C0-B13D4D8BAC57},0"
+PKEY_EFFECTNODEINFO_CAPTURE                 = "{F1056047-B091-4d85-A5C0-B13D4D8BAC57},1"
+
+PKEY_AUdioEngine_DeviceFormat		    = "{f19f064d-082c-4e27-bc73-6882a1bb8e4c},0"
+PKEY_AudioEngine_PhysicalSpeaker	    = "{1da5d803-d492-4edd-8c23-e0c0ffee7f0e},3"
+PKEY_AudioEngine_FullRangeSpeaker	    = "{1da5d803-d492-4edd-8c23-e0c0ffee7f0e},6"
+PKEY_AudioEndpoint_Icon			= "{259abffc-50a7-47ce-af08-68c9a7d73366},12"
+
+PKEY_DCOffset = "{5FF1918B-5C1E-4633-8BF5-D28F47F75CD5},0"
+PKEY_Silent = "{54889EB3-F0FA-48d1-84E9-38238C0C5AD2},0"
+
+PKEY_CTGUID = "{F5376650-918F-4cf4-91FB-D123CF4E1350},1"
+PKEY_CTDEFAULT = "{9943BAA5-3AC8-4d4f-9A7E-6899D5C8CE97},0"
+PKEY_AudioEndpoint_DefXML = "{B07DBDC6-91DB-40ca-A63A-23511CA5ED58},0"
+PKEY_AudioEndpoint_Mixer_DefXML = "{87B74771-1B4A-4c49-AE5E-C35A8FCD12CD},0"
+
+;Render APO
+CTRFX_FriendlyName                          = "Creative Audio Effects"
+CTRFX_PREMIX_CLSID                          = "{5744DC59-B983-4575-8236-42096876B1B9}"
+CTRFX_POSTMIX_CLSID                         = "{F875396E-0155-489c-AFF0-AD31DBE848CA}"
+CTRFX_SFX_CLSID                             = "{2BD33BE2-3B94-472b-91F5-645486E7937E}"
+CTRFX_MFX_CLSID                             = "{43FF9538-2BE1-41a1-8F1C-13B55E2448C4}"
+CTRFX_EFX_CLSID                             = "{BD0B58BF-6280-4331-B809-E52C5F4DCD68}"
+CTRFX_UI_CLSID                              = "{1B09911F-03AE-41f6-89B0-0673DD54FC47}"
+CTRFX_EFFECTNODEINFO_RENDER_CLSID           = "{75DF7488-D900-41d4-A328-8F7819EB5EC9}"
+
+KSNODETYPE_ANY                              = "{00000000-0000-0000-0000-000000000000}"
+KSNODETYPE_SPEAKER                          = "{DFF21CE1-F70F-11D0-B917-00A0C9223196}"
+KSNODETYPE_MICROPHONE                       = "{DFF21BE1-F70F-11D0-B917-00A0C9223196}"
+
+PKEY_LFX_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},1"
+PKEY_SFX_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},5"
+PKEY_MFX_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},6"
+PKEY_EFX_ProcessingModes_Supported_For_Streaming = "{D3993A3F-99C2-4402-B5EC-A92A0367664B},7"
+AUDIO_SIGNALPROCESSINGMODE_DEFAULT          = "{C18E2F7E-933D-4965-B7D1-1EEF228D2AF3}"
+
+REG_BINARY                                  = 0x00000001
+
+
+CT_GUID  = "{AC6D33B1-0629-4d06-A0D6-73D896269347}"
